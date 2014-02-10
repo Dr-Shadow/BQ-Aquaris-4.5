@@ -1,0 +1,11 @@
+In order to get kernel compilation working for bq Aquaris 4.5, make sure you follow these steps:
+
+- With this file (README), you have 3 folders; kernel, mediatek and toolchain. kernel folder is the basic one, with the linux kernel sources. mediatek folder contains dependences that are necessary to build for MTK (Mediatek) platform devices like bq Aquaris 4.5 smartphone. toolchain folder contains appropiate cross-compiler.
+
+- In Terminal, cd to kernel folder. There is a script called build.sh. That is the interface you will use to build device kernel.
+
+- Run script with "./build.sh aquaris45" command to begin with the build process. Once finished, you will find kernelFile file in the kernel folder root (./kernelFile).
+
+- Get original boot.img for device and unpack it. Repack boot.img using original ramdisk from boot.img and the new generated kernel.
+
+- If you want to perform a clean build, next time use "./build.sh clean aquaris45" command.
